@@ -1,0 +1,473 @@
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.resaltes {
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ec2f2f !important;
+    outline: 1px solid #ec2f2f !important;
+    box-shadow: 0 1rem 3rem rgba(143, 156, 183, 0.175) !important;
+
+}
+
+.error {
+    color: #ec2f2f !important;
+}
+
+body
+{
+    margin: 0 auto !important;
+    padding: 0 !important;
+    
+}
+
+
+onaliat-home section
+{
+    align-items: center;
+    padding: 1% 10%;
+    display: grid;
+    justify-content: center;
+    margin: 0 auto;
+    grid-template-columns: 55% 35%;
+    height: 100vh;
+    grid-gap:2%;
+    width: 100%;
+    max-height: auto;
+    box-sizing: border-box;
+    color: #fff;
+    background: url(https://www.aliatuniversidades.com.mx/hubfs/masc2.png), linear-gradient(0deg, #001624 16%, #51aee4 100%);
+} 
+
+onaliat-home section div
+{
+  height: auto;
+}
+
+onaliat-home section div:nth-child(1)
+{
+   
+    padding-right: 7%;
+    box-sizing: border-box;
+}
+
+onaliat-home section div:nth-child(1) img
+{
+   
+   padding: 1%;
+   width: 17rem !important;
+   box-sizing: border-box;
+   height: auto;
+}
+
+onaliat-home section div:nth-child(2) img {
+
+    padding: 1%;
+    width: 85% !important;
+    box-sizing: border-box;
+    height: auto;
+}
+
+
+
+
+onaliat-home section div:nth-child(1) h1 {
+    font: normal normal 900 3em Lato !important;
+    padding-bottom: 1%;
+}
+
+onaliat-home section div:nth-child(1) h2 {
+    font: normal normal 600 1.6em Lato !important;
+    padding-bottom: 1%;
+    letter-spacing: .1rem;
+}
+onaliat-home section div:nth-child(1) h3 {
+    font: normal normal 200 1.4em Lato !important;
+    padding-bottom: 1%;
+    color: #FFFFFF;
+    padding-right: 10%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+ onaliat-home button, onaliat-formulario button {
+     cursor: pointer;
+     width: 50%;
+     height: 3.5rem;
+     border-radius: 15px;
+     border: 0;
+     color: #FFFFFF;
+     font-weight: 500;
+     font-size: 1.2em !important;
+     padding: 3% 5%;
+     align-items: center;
+     align-self: center;
+     display: flex;
+    
+     justify-content: center;
+     margin-top: 1.7rem;
+     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .25) !important;
+     font-family: "Lato", sans-serif !important;
+     box-sizing: border-box;
+ }
+        #wps img, #wfm img {
+            width: 2rem !important;
+       
+            box-sizing: border-box;
+        }
+
+  onaliat-home #wps
+  {
+    background-color:#45CD68 !important ;
+  }
+
+   onaliat-home #wfm {
+       background-color: #E84621 !important;
+   }
+
+
+   /*Formulario onaliat modal*/
+
+   onaliat-formulario section
+   {
+    animation: slide-in .9s ease-in;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0 ;
+    right: 0;
+    transition: all 1s;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #0000009e;
+   }
+   
+   onaliat-formulario #formulario
+   {
+    
+    display: grid;
+    align-items: center;
+    background: url(https://www.aliatuniversidades.com.mx/hubfs/masc2.png), linear-gradient(0deg, #001624 16%, #51aee4 100%);
+   }
+
+    onaliat-formulario form{
+        width: 50%;
+        padding: 3% 2%;
+        margin:  0 auto;
+        height:  auto;
+        background-color: #FFFFFF !important;
+        border-radius: 20px;
+        border-top: 6px solid #EA5329
+    }
+
+    onaliat-formulario form h1 
+    {
+        font: normal normal bold 1.5em Lato !important;
+        text-align: center;
+        padding: 2% 2.5%;
+        box-sizing: border-box;
+        color: #EA5329;
+        
+
+    }
+
+
+onaliat-formulario .form-div {
+    
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+
+}
+
+
+onaliat-formulario .form-div label {
+    text-align: left;
+    color: #092B4A;
+    font-size: 1.05em;
+    font-weight: 700;
+    font-family: "Lato", sans-serif !important;
+}
+
+onaliat-formulario span {
+    text-align: left;
+    color: #092B4A;
+    font-size: 1em;
+    padding-bottom: 3.5%;
+    font-family: "Lato", sans-serif !important;
+}
+
+onaliat-formulario input {
+    width: 100%;
+    height: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #092B4A;
+    border-radius: 5px;
+    opacity: 1;
+    margin-top: 2%;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    outline: 0 solid #092B4A;
+}
+
+
+
+onaliat-formulario input[type=text]::placeholder,
+onaliat-formulario input[type=email]::placeholder,
+onaliat-formulario input[type=tel]::placeholder {
+    font-family: "Lato", sans-serif !important;
+    color: #0000004F;
+}
+
+onaliat-formulario select {
+    font-family: "Lato",
+        sans-serif !important;
+}
+
+
+onaliat-formulario select option {
+    font-size: 1.1em !important;
+    font-family: "Lato", sans-serif !important;
+    color: #0000004F;
+
+}
+
+
+ onaliat-formulario button {
+     cursor: pointer;
+     width: 100%;
+     height: 3.5rem;
+     border-radius: 5px;
+     border: 0;
+     color: #FFFFFF;
+     font-weight: 500;
+     font-size: 1.2em !important;
+     padding: 3% 5%;
+     align-items: center;
+     align-self: center;
+     display: flex;
+     justify-content: center;
+     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .25) !important;
+     font-family: "Lato", sans-serif !important;
+     box-sizing: border-box;
+    background-color: #E84621 !important;
+ }
+
+onaliat-formulario .aviso
+{
+    width: 90%;
+    margin: 0 auto;
+    font-size: .8em !important;
+    padding-top: 4%;
+}
+
+onaliat-formulario a
+{
+    color: #64BEE6 !important;
+}
+
+
+   /*estilos para laptop*/
+   @media screen and (max-width:1600px) {
+    onaliat-home section {
+        padding: 3% 1% 5% 10%;
+        grid-template-columns: 60% 40%;
+        height:auto;
+        grid-gap: 1%;
+        width: 100%;
+        max-height: auto;
+        align-items:center;
+        margin: 0 auto;
+        
+    }
+
+        onaliat-home section div:nth-child(1) {
+            padding-right: 0%;
+            box-sizing: border-box;
+        }
+    
+        onaliat-home section div:nth-child(1) img {
+            padding-top:0;
+            width: 13rem;
+        }
+        onaliat-home section div:nth-child(1) h1 {
+            font: normal normal 900 2.6em Lato !important;
+            padding-bottom: 1%;
+        }
+                onaliat-home section div:nth-child(1) h2 {
+                    font: normal normal 600 1.5em Lato !important;
+                    padding-bottom: 1%;
+                    letter-spacing: .1rem;
+                }
+        
+                onaliat-home section div:nth-child(1) h3 {
+                    font: normal normal 200 1.3em Lato !important;
+                    padding-bottom: 1%;
+                    color: #FFFFFF;
+                    padding-right: 0%;
+                }
+
+            onaliat-home button {
+                width: 54%;
+                font-weight: 500;
+                font-size: 1.2em !important;
+                align-content: center;
+                align-self: center;
+                justify-content: center;
+                margin-top: 1.3rem;
+                text-align: left;
+            }
+
+        onaliat-home section div:nth-child(2) img 
+        {
+            padding: 1%;
+            width: 74% !important;
+            box-sizing: border-box;
+            height: auto;
+        }
+
+        onaliat-formulario form {
+            width: 70%;
+            padding: 2% 1%;
+        }
+
+
+onaliat-formulario form h1 {
+    font: normal normal bold 1.3em Lato !important;
+}
+
+
+onaliat-formulario .form-div {
+    padding-bottom: .5rem;
+}
+
+
+onaliat-formulario .form-div label {
+    text-align: left;
+    color: #092B4A;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: "Lato", sans-serif !important;
+}
+
+onaliat-formulario span {
+    padding-bottom: 2.5%;
+}
+
+onaliat-formulario input {
+    height: 2.8rem;
+}
+
+
+onaliat-formulario select option {
+    font-size: 1em !important;
+}
+
+
+onaliat-formulario button {
+    height: 3rem;
+}
+
+   }
+
+   /*estilos para mov*/
+   @media screen and (max-width:1060px) {
+       onaliat-home section {
+           padding: 4% 5%;
+           grid-template-columns: 100%;
+           height: auto;
+           grid-gap: 1%;
+           width: 100%;
+           max-height: auto;
+           align-items: center;
+           margin: 0 auto;
+
+       }
+
+       onaliat-home section div:nth-child(1) {
+           padding-right: 0%;
+           box-sizing: border-box;
+       }
+
+       onaliat-home section div:nth-child(1) img {
+           padding-top: 0;
+            margin: 0 auto !important;
+        justify-content: center;
+        display: flex;
+        width: 50% !important;
+       }
+
+       onaliat-home section div:nth-child(1) h1 {
+           font: normal normal 900 1.5em Lato !important;
+           padding-bottom: 1%;
+            text-align: center;
+       }
+
+       onaliat-home section div:nth-child(1) h2 {
+           font: normal normal 600 1.2em Lato !important;
+           padding-bottom: 1%;
+           letter-spacing: .05rem;
+                text-align: center;
+                padding: 1% 15%;
+                box-sizing: border-box;
+       }
+
+       onaliat-home section div:nth-child(1) h3 {
+           font: normal normal 200 1em Lato !important;
+            padding-bottom: 5%;
+            box-sizing: border-box;
+           color: #FFFFFF;
+           padding-right: 0%;
+           text-align: center;
+           width: 85%;
+           margin: 0 auto;
+       }
+onaliat-home button {
+    width: auto;
+    font-weight: 500;
+    font-size: .9em !important;
+    text-align: left;
+    margin: 4% auto;
+    height: 2.9rem !important;
+}
+       onaliat-home section div:nth-child(2) img {
+           padding: 5% 0;
+           width: 78% !important;
+           box-sizing: border-box;
+           height: auto;
+           margin: 0 auto ;
+           display: flex;
+           justify-content: center;
+       }
+
+   #wps img,
+   #wfm img {
+        width: 1.6rem;
+       box-sizing: border-box;
+   }
+
+
+
+        onaliat-formulario form {
+            width: 80%;
+        }
+
+   onaliat-formulario section {
+       animation: slide-in .5s ease-in;
+       grid-template-columns: 0 100%;
+       background-color: #00000073;
+   }
+
+   onaliat-formulario form h1 {
+       font: normal normal bold 1.2em Lato !important;
+   }
+   }
