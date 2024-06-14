@@ -51,8 +51,9 @@ class onaliatFormulario extends HTMLElement {
                     <div id="formulario">
                         <form>
                         <h1>${datos.titulo}</h1>
-                        <!-- Nombre input -->
+                       
                         <div id="paso1">
+                            <!-- Nombre input -->
                             <div class="form-div">
                                 <label>Nombre completo</label>
                                 <input type="text" id="name" class="inputLp"  />
@@ -78,7 +79,37 @@ class onaliatFormulario extends HTMLElement {
                                     privacidad</a></span>
                                 </div>
                                 <div class="form-div">
-                                        <button type="button" onclick="primerPaso()" />CONTINUAR</button>
+                                        <button type="button" class="naranja" onclick="primerPaso()" />CONTINUAR</button>
+                                </div>
+                        </div>
+
+                        <div id="paso2">
+                            <!-- nivel select -->
+                            <div class="form-div">
+                                <label>Elige el nivel de estudios </label>
+                                <select class="inputLp" id="categoria" name="categoria">
+                                    <option value="">Selecciona una opción</option>
+                                </select>
+                                <span class="error "></span>
+                            </div>
+                            <!-- carrera select -->
+                            <div class="form-div">
+                                <label>Elige la carrera </label>
+                                <select class="inputLp" id="carrera" name="carrera">
+                                    <option value="">Selecciona una opción</option>
+                                </select>
+                                <span class="error "></span>
+                            </div>
+                              <div class="aviso">
+                                    <span>Al enviar, reconoces haber leído y estar de acuerdo con el <a
+                                    style="color:dodgerblue !important ;"
+                                    href="https://www.aliatuniversidades.com.mx/aliat/aviso-de-privacidad" target="_blank">aviso
+                                    de
+                                    privacidad</a></span>
+                                </div>
+                                <div class="form-div">
+                                        <button type="button" class="naranja" onclick="SubmitForm()" />ENVIAR</button>
+                                        <button type="button" class="lt-naranja" onclick="contacto.ActualizarPaso('paso1','paso2')" />REGRESAR</button>
                                 </div>
                         </div>
                         </form>
@@ -117,6 +148,11 @@ class contacto  {
 
     static ocultar(id) {
         document.getElementById(id).style.display = "none"
+    }
+
+    static ActualizarPaso(idMostrar,idOcultar) {
+        document.getElementById(idOcultar).style.display = "none"
+        document.getElementById(idMostrar).style.display = "initial"
     }
 
     static removerResaltes() {

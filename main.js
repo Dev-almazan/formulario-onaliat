@@ -7,6 +7,23 @@ document.getElementById("wfm").addEventListener("click",()=>
 {
     /*Mandamos a llamar componente formulario */
     customElements.define("onaliat-formulario", onaliatFormulario);
+
+    /*Traemos datos del api de los select*/
+    cargarPlanDeEstudios(endPointGet, "?hdb=" + catalogoApi, token)
+        .then(() => {
+
+            renderCategoria(ResultData, modalidadAs, "categoria")
+            renderInputRange();
+
+            document.getElementById("categoria").addEventListener("change", function () {
+                renderCarrer(ResultData, this.value, modalidadAs, "carrera")
+            })
+
+        })
+        .catch((error) => {
+            console.error("Error al acceder al  response data", error);
+    });
+
     
 })
 
@@ -40,6 +57,7 @@ function primerPaso() {
     }
     else {
         contacto.alertas("", 0);
+        contacto.ActualizarPaso("paso2","paso1");
     }
 
 }
