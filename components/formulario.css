@@ -43,8 +43,14 @@ body
 }
 
 
+#pleca
+{
+    cursor: pointer;
+}
+
 onaliat-home section
 {
+    
     align-items: center;
     padding: 1% 10%;
     display: grid;
@@ -90,17 +96,23 @@ onaliat-home section div:nth-child(2) img {
 }
 
 
+ onaliat-formulario img {
+ display: none;
+ }
 
 
 onaliat-home section div:nth-child(1) h1 {
     font: normal normal 900 3em Lato !important;
     padding-bottom: 1%;
+    
+    margin: 2% auto ;
 }
 
 onaliat-home section div:nth-child(1) h2 {
     font: normal normal 600 1.6em Lato !important;
     padding-bottom: 1%;
     letter-spacing: .1rem;
+        margin: 2% auto;
 }
 onaliat-home section div:nth-child(1) h3 {
     font: normal normal 200 1.4em Lato !important;
@@ -109,6 +121,7 @@ onaliat-home section div:nth-child(1) h3 {
     padding-right: 10%;
     box-sizing: border-box;
     text-align: left;
+    line-height: 36px !important;
 }
 
  onaliat-home button, onaliat-formulario button {
@@ -133,7 +146,6 @@ onaliat-home section div:nth-child(1) h3 {
  }
         #wps img, #wfm img {
             width: 2rem !important;
-       
             box-sizing: border-box;
         }
 
@@ -149,9 +161,12 @@ onaliat-home section div:nth-child(1) h3 {
 
    /*Formulario onaliat modal*/
 
+
+  
+
    onaliat-formulario section
    {
-    animation: slide-in .9s ease-in;
+    animation: slide-in .9s ease-out;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -391,6 +406,21 @@ onaliat-formulario button {
 
    /*estilos para mov*/
    @media screen and (max-width:1060px) {
+
+   onaliat-formulario .cerrar-btn 
+   {
+    width: 2.3rem;
+        padding: 1.5%;
+        box-sizing: border-box;
+        position: relative;
+        background-color: #E84621;
+        cursor: pointer;
+        right: -95%;
+        top:-30px;
+        border-radius: 50px;
+        display: block;
+        border:solid 1.2px #FFF !important;
+   }
        onaliat-home section {
            padding: 4% 5%;
            grid-template-columns: 100%;
@@ -475,9 +505,11 @@ onaliat-home button {
        animation: slide-in .5s ease-in;
        grid-template-columns: 0 100%;
        background-color: #00000073;
+
    }
 
    onaliat-formulario form h1 {
-       font: normal normal bold 1.2em Lato !important;
+       font: normal normal bold 1.1em Lato !important;
+       padding: 0 1%  !important;
    }
    }

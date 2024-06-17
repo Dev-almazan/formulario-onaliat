@@ -23,8 +23,19 @@ document.getElementById("wps").addEventListener("click", () => {
 /*Boton solicitar Informacion */
 document.getElementById("wfm").addEventListener("click",()=>
 {
+    document.querySelector('body').style.overflowY = 'hidden';
     /*Mandamos a llamar componente formulario */
-    customElements.define("onaliat-formulario", onaliatFormulario);
+
+    if (!customElements.get('onaliat-formulario')) {
+        customElements.define('onaliat-formulario', onaliatFormulario);
+       
+    }
+    else
+    {
+        const componentElement = document.querySelector('onaliat-formulario');
+        componentElement.style.display = "";
+    }
+    
 
     /*Traemos datos del api de los select*/
     const token = "Bearer 2ee90da8-c02e-4c3d-9700-d6200016ee75";
@@ -47,6 +58,8 @@ document.getElementById("wfm").addEventListener("click",()=>
 
     
 })
+
+
 
 
 function primerPaso() {

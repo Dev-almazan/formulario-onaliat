@@ -36,6 +36,14 @@ class onaliatSection extends HTMLElement {
 
 class onaliatFormulario extends HTMLElement {
 
+    static mostrarInicio(){
+
+        const componentElement = document.querySelector('onaliat-formulario'); 
+        componentElement.style.display = "none";
+        document.querySelector('body').style.overflowY = 'scroll';
+    }
+
+
     connectedCallback() {
 
 
@@ -47,9 +55,11 @@ class onaliatFormulario extends HTMLElement {
 
         this.innerHTML = `
             <section>
-                    <div id="pleca"></div>
+                    <div id="pleca" onclick="onaliatFormulario.mostrarInicio()"></div>
                     <div id="formulario">
+                    
                         <form>
+                        <img class="cerrar-btn" src="https://www.etac.edu.mx/hubfs/Landing-aliat/equis_blanca.svg" onclick="onaliatFormulario.mostrarInicio()"  />
                         <h1>${datos.titulo}</h1>
                        
                         <div id="paso1">
