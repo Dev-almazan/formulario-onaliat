@@ -1,22 +1,43 @@
 /*Mandamos a llamar componente principal */
 customElements.define("onaliat-home", onaliatSection);
+const marca = document.getElementById("onaliat-formulario").getAttribute("data-company")
+const medio = document.getElementById("onaliat-formulario").getAttribute("data-medio") 
+const pageId = document.getElementById("onaliat-formulario").getAttribute("data-pageId")
+const modalidad = document.getElementById("onaliat-formulario").getAttribute("data-modalidad")
 
 
 
+/*manejo de eventos*/
+
+
+
+/*Boton iniciar conversacion whatsapp */
+document.getElementById("wps").addEventListener("click", () => {
+ 
+    const paginaWp = apiAliat.paginaWhatsApp("ONALIAT", contacto.extraerUtmMedio());
+    window.location.href = paginaWp;
+
+})
+
+
+/*Boton solicitar Informacion */
 document.getElementById("wfm").addEventListener("click",()=>
 {
     /*Mandamos a llamar componente formulario */
     customElements.define("onaliat-formulario", onaliatFormulario);
 
     /*Traemos datos del api de los select*/
-    cargarPlanDeEstudios(endPointGet, "?hdb=" + catalogoApi, token)
-        .then(() => {
+    const token = "Bearer 2ee90da8-c02e-4c3d-9700-d6200016ee75";
+    const endPointGet = "https://conecta.aliat.mx/api/hubspot/";
 
-            renderCategoria(ResultData, modalidadAs, "categoria")
-            renderInputRange();
-
+    /*Mandamos a llamar  Plan de estudios para renderizar oferta educativa */
+    apiAliat.cargarPlanDeEstudios(endPointGet, "?hdb=ofertaEtac",token)
+        .then((respuesta) => {
+            /*Creamos opcion de select categoria */
+            contacto.renderCategoria(respuesta, modalidad, "categoria")
+            /*Creamos opcion de select carrera*/
             document.getElementById("categoria").addEventListener("change", function () {
-                renderCarrer(ResultData, this.value, modalidadAs, "carrera")
+                contacto.renderCarrer(respuesta, this.value, modalidad, "carrera")
             })
 
         })
@@ -28,7 +49,6 @@ document.getElementById("wfm").addEventListener("click",()=>
 })
 
 
-/*manejo de eventos*/
 function primerPaso() {
 
     contacto.removerResaltes();
@@ -58,6 +78,53 @@ function primerPaso() {
     else {
         contacto.alertas("", 0);
         contacto.ActualizarPaso("paso2","paso1");
+    }
+
+}
+
+function segundoPaso() {
+
+    contacto.removerResaltes();
+
+    let categoria = document.getElementById('categoria');
+    let carrera = document.getElementById('carrera');
+    const letras = /^([á-ú-Á-Ú-a-z-A-Z-ñ ._])+$/;
+
+    if (categoria.length == 0 || letras.test(categoria.value) === false) {
+        contacto.resaltar("categoria")
+        contacto.alertas("Elige una opción", 3);
+    }
+    else if (carrera.length == 0 || letras.test(carrera.value) === false) {
+        contacto.resaltar("carrera")
+        contacto.alertas("Elige una opción", 4);
+    }
+    else {
+        contacto.alertas("", 0);
+        //instanciamos el objeto lead
+        const Lead = new contacto(marca,medio,
+            document.getElementById("name").value,
+            document.getElementById("email").value,
+            document.getElementById("phone").value,
+            document.getElementById("categoria").value,
+            document.getElementById("carrera").value,
+            "On Aliat", "CES ", pageId,"","","","","","")
+
+        //llamamos funcion para envio de formulario que nos retorna la promesa
+        apiAliat.submitForm(Lead, "https://conecta.aliat.mx/api/hubspot/")
+            .then((respuesta) => {
+
+                if (respuesta.status == 200) {
+                    //deacuerdo al medio seleccionado redireccionamos
+                    const paginatyp = apiAliat.paginaConfirmacion("ONALIAT");
+                    window.location.href = paginatyp + contacto.extraerUtmMedio();
+                 }
+                else {
+                    respuesta.json().then(respuesta => {
+                        alert(respuesta)
+                    })
+                }
+
+            })
     }
 
 }
