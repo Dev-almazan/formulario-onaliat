@@ -1,5 +1,7 @@
 /*Mandamos a llamar componente principal */
 customElements.define("onaliat-home", onaliatSection);
+customElements.define("onaliat-tarjetas", onaliatTarjeta);
+
 const marca = document.getElementById("onaliat-formulario").getAttribute("data-company")
 const medio = document.getElementById("onaliat-formulario").getAttribute("data-medio") 
 const pageId = document.getElementById("onaliat-formulario").getAttribute("data-pageId")

@@ -1,0 +1,82 @@
+
+onaliat-tarjetas article{
+    background: transparent linear-gradient(90deg, #00588D 0%, #092B4A 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    height: auto;
+    padding: 4% 14%;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif !important;
+}
+
+onaliat-tarjetas article h2{
+    color: #FFFFFF;
+    font: normal normal bold 2.1em Lato !important;
+    padding-bottom: 1.5%;
+    margin: 0;
+}
+onaliat-tarjetas article h3 {
+    color: #FFFFFF;
+    font: normal normal  1.5em Lato !important;
+    font-weight: 300 !important;
+    padding-bottom: 2%;
+    margin: 0;
+}
+
+
+onaliat-tarjetas section  {
+   padding: 2% 0;
+   display: grid;
+   grid-gap: 1%;
+   grid-template-columns: repeat(8,1fr);
+   width: 100%;
+   height: auto ;
+   margin:  0 auto;
+}
+
+onaliat-tarjetas div
+{
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    width: 7rem; 
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    margin:  0 auto;
+box-shadow: 3px 3px 8px #00000045;
+    border: 1px solid #F08300;
+    cursor: pointer;
+}
+
+onaliat-tarjetas img {
+    width: 70px;
+    height: auto;
+    padding: 5%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+onaliat-card-footer div
+{
+    background-color: #FFFFFF;
+    box-shadow: 3px 3px 8px #00000045;
+        border: 3px solid #00588D;
+        border-radius: 20px;
+        width: 100%;
+        display: grid;
+
+        grid-template-columns: 100%;
+}
+
+onaliat-card-footer div  h2 {
+    color: #00588D;
+    font: normal normal bold 2.1em Lato !important;
+    padding-bottom: 1.5%;
+   
+}
+
+onaliat-card-footer div h3 {
+    color: #545454;
+    font: normal normal 1.5em Lato !important;
+    font-weight: 300 !important;
+
+}
