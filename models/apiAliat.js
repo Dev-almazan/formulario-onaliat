@@ -3,12 +3,12 @@
 class apiAliat 
 {
 
-    static async cargarPlanDeEstudios(url, parametros, token) {
+    static async cargarPlanDeEstudios(url, parametros,Auth) {
         try {
             const respuesta = await fetch(url + parametros, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `${token}`,
+                    'Authorization': `Bearer ${Auth}-d6200016ee75`,
                     'content-type': 'application/json'
                 }
             });
@@ -19,14 +19,14 @@ class apiAliat
         }
     }
     
-    static async submitForm(datos, url) {
+    static async submitForm(datos, url,Auth) {
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(datos),
                 headers: {
                     'content-type': 'application/json',
-                    'Authorization': `Bearer 2ee90da8-c02e-4c3d-9700-d6200016ee75`
+                    'Authorization': `Bearer ${Auth}-d6200016ee75`
                 }
             })
             return response; //Retornamos la promesa

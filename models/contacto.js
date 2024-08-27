@@ -12,7 +12,7 @@ class contacto  {
             this.categoria = categoria,
             this.carrera = carrera,
             this.modalidad = modalidad,
-            this.campus = campus,1
+            this.campus = campus,
             this.pageid = pageid,
             this.precioInicial = precioInicial,
             this.precioFinal = precioFinal,

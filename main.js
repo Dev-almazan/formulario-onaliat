@@ -40,11 +40,10 @@ document.getElementById("wfm").addEventListener("click",()=>
     
 
     /*Traemos datos del api de los select*/
-    const token = "Bearer 2ee90da8-c02e-4c3d-9700-d6200016ee75";
     const endPointGet = "https://conecta.aliat.mx/api/hubspot/";
 
     /*Mandamos a llamar  Plan de estudios para renderizar oferta educativa */
-    apiAliat.cargarPlanDeEstudios(endPointGet, "?hdb=ofertaEtac",token)
+    apiAliat.cargarPlanDeEstudios(endPointGet, "?hdb=ofertaEtac","2ee90da8-c02e-4c3d-9700")
         .then((respuesta) => {
             /*Creamos opcion de select categoria */
             contacto.renderCategoria(respuesta, modalidad, "categoria")
@@ -125,7 +124,7 @@ function segundoPaso() {
             "On Aliat", "CES ", pageId,"","","","","","")
 
         //llamamos funcion para envio de formulario que nos retorna la promesa
-        apiAliat.submitForm(Lead, "https://conecta.aliat.mx/api/hubspot/")
+        apiAliat.submitForm(Lead, "https://conecta.aliat.mx/api/hubspot/","2ee90da8-c02e-4c3d-9700")
             .then((respuesta) => {
 
                 if (respuesta.status == 200) {
